@@ -51,6 +51,16 @@ module battery_plate(xwidth)
         
 }
 
+module saw_battery_plate(xwidth)
+{
+    difference(){
+        batterysupport(xwidth);
+        rotate([180,0,0]) translate([0,0-25,-42]) scale([1.02,1.02,1.02]) battery_stud(xwidth);
+        //rotate([0,90,-90]) translate([40,10,-8]) cube([xwidth,xwidth,10]);
+    }
+        
+}
+
 module battery_stud_body(thewidth)
 {
    offset = (thewidth / 2 ) - 7.75;
@@ -158,10 +168,14 @@ module sander_holder()
 module saw_holder()
 {
     xwidth = 27.5;
-    rotate([90,0,0]) gearmount(xwidth);
-    rotate([90,0,-90]) translate([10,0,-20]) battery_stud(xwidth);
+    rotate([90,180,0]) translate([-100,0-xwidth,0]) gearmount(xwidth);
+    difference(){
+       rotate([90,0,-90]) translate([10+30,0,-50]) battery_stud(xwidth);
+       rotate([90,0,0]) translate([12+75,-1,18.25+30]) cube([35,xwidth+2,6.5]);
+       }
+    rotate([90,0,0]) translate([12,0,19.25]) cube([75,xwidth,6+30]);
     //rotate([90,0,0]) translate([0,0,0]) brace(xwidth);
-    %rotate([90,0,-90]) translate([10,0,-110]) battery_plate(xwidth);
+    %rotate([90,0,-90]) translate([10+30,0-(xwidth/2)+16,-140]) battery_plate(xwidth);
     rotate([0,90,0]) translate([-20,40,-50]) battery_plate(xwidth);
 }
 //battery_stud(27.4);
