@@ -178,9 +178,63 @@ module saw_holder()
     %rotate([90,0,-90]) translate([10+30,0-(xwidth/2)+16,-140]) battery_plate(xwidth);
     rotate([0,90,0]) translate([-20,40,-50]) battery_plate(xwidth);
 }
+
+module dewalt_charger_holder()
+{
+    xwidth = 27.4;
+    rotate([90,0,0]) gearmount(xwidth);
+    difference(){
+      rotate([90,0,4]) translate([7-50,0,23]) cube([125,xwidth,20]);
+      rotate([90,0,4]) translate([60,xwidth/2,41]) cylinder(r=12,h=3);
+      rotate([90,0,4]) translate([60,xwidth/2,19]) cylinder(r=1.65,h=30);
+      }
+}
+
+module milwaukee_charger_holder()
+{
+    xwidth = 27.4;
+    rotate([90,0,0]) gearmount(xwidth);
+    difference(){
+      rotate([90,0,4]) translate([7-75,0,23]) cube([150,xwidth,20]);
+      rotate([90,0,4]) translate([60,xwidth/2,41]) cylinder(r=12,h=3);
+      rotate([90,0,4]) translate([60,xwidth/2,19]) cylinder(r=1.65,h=30);
+      rotate([90,0,4]) translate([60-103.5,xwidth/2,41]) cylinder(r=12,h=3);  
+      rotate([90,0,4]) translate([60-103.5,xwidth/2,19]) cylinder(r=1.65,h=60);
+      rotate([0,0,0])  translate([72,-30+3,-5]) cylinder(r=6*1.02,h=50);  
+      rotate([0,0,0])  translate([8,-34.5+3,-5]) cylinder(r=6*1.02,h=50);  
+      rotate([0,0,0])  translate([-54,-38.5+3,-5]) cylinder(r=6*1.02,h=50);   
+      }
+}
+
+module milwaukee_charger_rod()
+{
+    
+    cylinder(r=6,h=150);
+}
+
+module kobalt_charger_holder()
+{
+    xwidth = 27.4;
+    rotate([90,0,0]) gearmount(xwidth);
+    difference(){
+      rotate([90,0,4]) translate([7-85,0,23]) cube([160,xwidth,20]);
+      rotate([90,0,4]) translate([60,xwidth/2,41]) cylinder(r=12,h=3);
+      rotate([90,0,4]) translate([60,xwidth/2,19]) cylinder(r=1.65,h=30);
+      rotate([90,0,4]) translate([60-113.5,xwidth/2,41]) cylinder(r=12,h=3);  
+      rotate([90,0,4]) translate([60-113.5,xwidth/2,19]) cylinder(r=1.65,h=60);
+      rotate([0,0,0])  translate([72,-30+3,-5]) cylinder(r=6*1.02,h=50);  
+      rotate([0,0,0])  translate([8-8,-34.5+3,-5]) cylinder(r=6*1.02,h=50);  
+      rotate([0,0,0])  translate([-62,-38.5+3,-5]) cylinder(r=6*1.02,h=50);   
+      }
+}
+
 //battery_stud(27.4);
-saw_holder();
+//saw_holder();
 //sander_holder();
 //dewalt_holder(35);
 //dewalt_lower(35);
 //gearmount(15.7);
+//dewalt_charger_holder();
+//milwaukee_charger_holder();
+//milwaukee_charger_rod();
+kobalt_charger_holder();
