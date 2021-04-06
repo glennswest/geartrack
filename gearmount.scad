@@ -233,7 +233,7 @@ module kobalt_charger_holder()
 //sander_holder();
 //dewalt_holder(35);
 //dewalt_lower(35);
-gearmount(15.7);
+//gearmount(15.7);
 //dewalt_charger_holder();
 //milwaukee_charger_holder();
 //milwaukee_charger_rod();
